@@ -1,0 +1,271 @@
+/****** RESET personalisé ****/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-family: 'Open Sans';
+	vertical-align: baseline;
+
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul, li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none
+}
+
+body, html
+{
+	width: 100%;
+	height: 100%;
+}
+
+ a:hover
+{
+	color: #FEF000 !important; /**laisser le !important car sinon les classes suivantes sont prioritaires **/
+	transition: all .5s ease-in-out;
+}
+
+
+/****************/
+/**** HEADER ****/
+/****************/
+
+
+header
+{
+	min-height: 100%; /** pour le background **/
+	background: url(../img/header_bg.jpg) center no-repeat fixed;
+	background-size: cover;
+  	display: flex;
+	align-items:center;
+	justify-content:center;
+
+}
+
+ nav 
+{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    background: #000;
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+}
+
+nav a
+{
+	padding: 15px;
+	text-transform: uppercase;
+	color: #fff
+}
+
+.toggle-nav {
+	display:none;
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	padding: 10px 10px;
+	color: #ccc;
+	font-size:30px;
+	z-index: 1;
+}
+
+
+#logo
+{
+	max-width: 100%;
+	height: auto;
+}
+
+/****************/
+/**** CONTENT ****/
+/****************/
+
+section
+{
+	z-index: 4
+}
+
+.section_txt_pub, .section_txt_no_pub
+{
+	display: flex;
+	justify-content:space-around;
+	max-width: 960px;
+	margin: 30px auto;
+	min-height: 1000px;
+}
+.section_bg
+{
+	min-height: 100%; /** pour le background **/
+	min-height: 400px;
+	background: url(../img/kylo_bg.jpg) no-repeat center 0 fixed;
+}
+
+
+/***style génériques articles**/
+
+article h1
+{
+	text-align: center;
+	margin-bottom: 20px;
+}
+article p 
+{
+	text-align: justify;
+	line-height: 20px;
+	padding: 0px 10px 0px 10px
+}
+
+ article > img 
+{
+	float: left;
+	padding: 20px;
+}
+
+.section_txt_pub > article
+{
+	max-width: 480px; /**basé sur grid en 960  deux colonnes **/
+}
+
+article	
+{
+	margin: 0 20px;
+}
+
+aside /** contenant des pubs**/
+{
+	text-align: center;
+	max-width: 480px;
+}
+
+.pub //*** plutot que de perdre du temps et des dizaines de lignes en Javascript ou jQuery, trois lignes de CSS suffisent pour avoir l'effet demandé**/
+{
+	position: -webkit-sticky; 
+    position: sticky;
+    top:100px;
+}
+
+/****************/
+/**** FOOTER ****/
+/****************/
+
+footer
+{
+	width: 100%;
+	margin : 0px auto;
+	min-height: 300px;
+	text-align: center;
+	background: url(../img/footer_bg.jpg) center top no-repeat;
+	background-size: cover;
+	color: #fff;
+	padding-top: 40px;
+}
+
+#footer_link
+{
+	margin-top: 30px;
+	display: flex;
+	align-items:center;
+	justify-content:space-around;
+}
+
+#footer_link div ul li
+{
+	padding: 10px;
+}
+
+#footer_link div ul li > a
+{
+	color: #fff;
+}
+
+#footer_link div:nth-child(3) > ul
+{
+	display: flex;
+	flex-direction:row;
+	margin-top: 20px;
+}
+
+.icon
+{
+	opacity: 0.3;
+}
+
+.icon:hover
+{
+	opacity: 1;
+	scale:1.1;
+	transition : all .1s ease-in-out;
+}
+
+
+
+/********************/
+/**** RESPONSIVE ****/
+/********************/
+
+
+@media only screen and (max-width:768px) {
+
+.toggle-nav
+{
+	display: block;
+	background-color: #000;
+
+}
+
+.active
+{
+	display: none;
+	padding-top: 50px;
+    position: fixed;
+    left: 0; 
+    right: 0;
+   	flex-direction:column;
+   	width: 100%
+   	background: transparent;
+   	z-index: 0;
+   	transition: all 0.2s linear;
+}
+
+	aside
+	{
+		display: none;
+	}
+
+	article
+	{
+		text-align: center;
+	}
+
+	 article > img 
+	{
+		float: inherit;
+		padding: 20px;
+	}
+}
